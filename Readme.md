@@ -3,7 +3,7 @@
 ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Features
-- Alpine 3.12
+- Alpine 3.14
 - PHP 7.3
 - Nginx + PHP FPM optimized
 - Custom nginx configuraiton
