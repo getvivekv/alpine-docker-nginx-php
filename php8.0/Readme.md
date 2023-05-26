@@ -31,8 +31,8 @@ FROM getvivekv/alpine-docker-nginx-php8
 # Copy your project content
 COPY html /var/www/html/
 RUN composer install --optimize-autoloader --no-interaction --no-progress
-RUN echo "session.save_handler = redis" >> /etc/php7/conf.d/custom.ini && \
-    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php7/conf.d/custom.ini
+RUN echo "session.save_handler = redis" >> /etc/php8/conf.d/custom.ini && \
+    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php8/conf.d/custom.ini
 ```
 
 ### Adding custom shell scripts to execute before nginx starts
@@ -44,7 +44,7 @@ FROM getvivekv/alpine-docker-nginx-php8
 # Copy your project content
 COPY html /var/www/html
 RUN composer install --optimize-autoloader --no-interaction --no-progress
-RUN echo "session.save_handler = redis" >> /etc/php7/conf.d/custom.ini && \
-    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php7/conf.d/custom.ini
+RUN echo "session.save_handler = redis" >> /etc/php8/conf.d/custom.ini && \
+    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php8/conf.d/custom.ini
 ADD startup /startup.d/
 ```
