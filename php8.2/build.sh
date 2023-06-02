@@ -7,4 +7,4 @@ docker tag alpine-docker-nginx-php82:latest zeroweb/alpine-docker-nginx-php82:la
 docker push zeroweb/alpine-docker-nginx-php82:latest
 
 # Example
-# docker run -d --rm --name test -p 80:80 -v `pwd`/src:/var/www/html alpine-docker-nginx-php8
+# docker run -d --rm --name test -p 80:80 -v `pwd`/src:/var/www/html alpine-docker-nginx-php82
