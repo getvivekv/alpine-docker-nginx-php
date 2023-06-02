@@ -3,8 +3,8 @@
 ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Features
-- Alpine 3.16
-- PHP 8.0
+- Alpine 3.18
+- PHP 8.1
 - Nginx + PHP FPM optimized
 - Custom nginx configuration
     - Able to run php files without .php extension
@@ -16,7 +16,7 @@
 ## Usage
 
 ```dockerfile
-FROM zeroweb/alpine-docker-nginx-php8
+FROM zeroweb/alpine-docker-nginx-php81
 # Copy your project content
 COPY html /var/www/html
 RUN composer install --optimize-autoloader --no-interaction --no-progress
@@ -31,8 +31,8 @@ FROM zeroweb/alpine-docker-nginx-php8
 # Copy your project content
 COPY html /var/www/html/
 RUN composer install --optimize-autoloader --no-interaction --no-progress
-RUN echo "session.save_handler = redis" >> /etc/php8/conf.d/custom.ini && \
-    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php8/conf.d/custom.ini
+RUN echo "session.save_handler = redis" >> /etc/php81/conf.d/custom.ini && \
+    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php81/conf.d/custom.ini
 ```
 
 ### Adding custom shell scripts to execute before nginx starts
@@ -44,7 +44,7 @@ FROM zeroweb/alpine-docker-nginx-php8
 # Copy your project content
 COPY html /var/www/html
 RUN composer install --optimize-autoloader --no-interaction --no-progress
-RUN echo "session.save_handler = redis" >> /etc/php8/conf.d/custom.ini && \
-    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php8/conf.d/custom.ini
+RUN echo "session.save_handler = redis" >> /etc/php81/conf.d/custom.ini && \
+    echo 'session.save_path = "tcp://redis:6379"' >> /etc/php81/conf.d/custom.ini
 ADD startup /startup.d/
 ```

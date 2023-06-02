@@ -2,9 +2,9 @@
 
 # This script builds the docker file and pushes to the hub
 
-docker build -t alpine-docker-nginx-php8 .
-docker tag alpine-docker-nginx-php8:latest zeroweb/alpine-docker-nginx-php8:latest
-docker push zeroweb/alpine-docker-nginx-php8:latest
+docker build -t alpine-docker-nginx-php82 .
+docker tag alpine-docker-nginx-php82:latest zeroweb/alpine-docker-nginx-php82:latest
+docker push zeroweb/alpine-docker-nginx-php82:latest
 
 # Example
 # docker run -d --rm --name test -p 80:80 -v `pwd`/src:/var/www/html alpine-docker-nginx-php8

@@ -16,7 +16,7 @@
 ## Usage
 
 ```dockerfile
-FROM getvivekv/alpine-docker-nginx-php7
+FROM zeroweb/alpine-docker-nginx-php7
 # Copy your project content
 COPY html /var/www/html
 RUN composer install --optimize-autoloader --no-interaction --no-progress
@@ -27,7 +27,7 @@ RUN composer install --optimize-autoloader --no-interaction --no-progress
 An optimized php.ini for production is loaded by default. You can add additional parameters to this php.ini. Example
 
 ```Dockerfile
-FROM getvivekv/alpine-docker-nginx-php7
+FROM zeroweb/alpine-docker-nginx-php7
 # Copy your project content
 COPY html /var/www/html/
 RUN composer install --optimize-autoloader --no-interaction --no-progress
@@ -40,7 +40,7 @@ RUN echo "session.save_handler = redis" >> /etc/php7/conf.d/custom.ini && \
 If you have any shell script that you would want to execute before nginx starts, put those in a folder and add those to `/startup.d`
 
 ```Dockerfile
-FROM getvivekv/alpine-docker-nginx-php7
+FROM zeroweb/alpine-docker-nginx-php7
 # Copy your project content
 COPY html /var/www/html
 RUN composer install --optimize-autoloader --no-interaction --no-progress
